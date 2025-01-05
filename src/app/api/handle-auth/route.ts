@@ -43,7 +43,7 @@ export async function POST(request: Request) {
     const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
     
     // Upsert the authentication data
-    const { data: authData, error: upsertError } = await supabase
+    const { error: upsertError } = await supabase
       .from('Google Auth')
       .upsert({
         email: userData.email,
