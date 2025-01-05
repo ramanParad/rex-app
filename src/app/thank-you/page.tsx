@@ -28,11 +28,9 @@ function ThankYouContent() {
       return data
     })
     .then(data => {
-      console.log('Success:', data)
       setIsProcessing(false)
     })
     .catch((error) => {
-      console.error('Error:', error)
       setError(error.message)
       setIsProcessing(false)
     })
