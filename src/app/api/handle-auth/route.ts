@@ -28,7 +28,10 @@ export async function POST(request: Request) {
     const tokenData = await tokenResponse.json()
 
     if (!tokenResponse.ok) {
-      throw new Error(tokenData.error || 'Failed to exchange code for tokens')
+      return NextResponse.json(
+        { error: tokenData.error || 'Failed to exchange code for tokens' },
+        { status: 400 }
+      )
     }
 
     // Get user info using the access token
@@ -37,6 +40,13 @@ export async function POST(request: Request) {
         Authorization: `Bearer ${tokenData.access_token}`,
       },
     })
+
+    if (!userResponse.ok) {
+      return NextResponse.json(
+        { error: 'Failed to fetch user info' },
+        { status: 400 }
+      )
+    }
 
     const userData = await userResponse.json();
 
@@ -61,7 +71,10 @@ export async function POST(request: Request) {
 
     if (upsertError) {
       console.error('Supabase error:', upsertError);
-      throw new Error('Failed to store authentication data');
+      return NextResponse.json(
+        { error: 'Failed to store authentication data' },
+        { status: 500 }
+      )
     }
 
     return NextResponse.json({ 
