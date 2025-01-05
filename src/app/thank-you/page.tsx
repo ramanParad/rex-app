@@ -27,7 +27,7 @@ function ThankYouContent() {
       }
       return data
     })
-    .then(data => {
+    .then(() => {
       setIsProcessing(false)
     })
     .catch((error) => {
