@@ -36,7 +36,7 @@ function ThankYouContent() {
           </div>
 
           <div className="border-t border-gray-200 pt-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-3 text-center">What's Next?</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-3 text-center">What&apos;s Next?</h2>
             <ul className="text-center space-y-3 text-gray-600">
               <li className="flex items-center justify-center">
                 <span>REX now has access to your Google services.</span>
