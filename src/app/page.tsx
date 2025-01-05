@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback } from 'react'
+import Image from 'next/image'
 
 export default function LoginPage() {
   const handleGoogleLogin = useCallback(() => {
@@ -32,10 +33,12 @@ export default function LoginPage() {
           onClick={handleGoogleLogin}
           className="bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-lg shadow-sm hover:bg-gray-100 flex items-center"
         >
-          <img 
+          <Image 
             src="https://www.google.com/favicon.ico" 
             alt="Google" 
-            className="w-6 h-6 mr-2"
+            width={24}
+            height={24}
+            className="mr-2"
           />
           Sign in with Google
         </button>
