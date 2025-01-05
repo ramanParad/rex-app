@@ -42,7 +42,7 @@ function ThankYouContent() {
                 <span>REX now has access to your Google services.</span>
               </li>
               <li className="flex items-center justify-center">
-                <span>We're working on setting up your REX voice agent and will notify you when it's ready.</span>
+                <span>We&apos;re working on setting up your REX voice agent and will notify you when it&apos;s ready.</span>
               </li>
             </ul>
           </div>
