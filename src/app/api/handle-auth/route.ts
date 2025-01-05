@@ -40,6 +40,10 @@ export async function POST(request: Request) {
 
     const userData = await userResponse.json();
 
+    if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
+      throw new Error('Missing Supabase credentials');
+    }
+
     const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
     
     // Upsert the authentication data
